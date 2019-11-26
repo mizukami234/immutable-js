@@ -5638,7 +5638,9 @@
 
       defaultValues[k] = v;
     });
-    return makeRecordType(Origin.prototype, defaultValues, name);
+    var RecordType = makeRecordType(Origin.prototype, defaultValues, name);
+    Object.setPrototypeOf(RecordType, Origin);
+    return RecordType;
   }
 
   /**
